@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>侧边栏示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 350px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: #1d3124;
+            padding: 20px;
+            transition: all 0.5s;
+        }
+
+        .sidebar_a {
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #1d3124;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #1d3124;
+            background: #f6f4e8;
+        }
+
+        .submenu {
+            display: block;
+            background: #1d3124;
+            transition: all 0.3s;
+        }
+
+        .active .submenu {
+            display: block;
+        }
+
+        .submenu_a {
+            text-align: left;
+            text-indent: 2em;
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function toggleSubmenu() {
+            var submenu = document.getElementById('submenu');
+            if (submenu.style.display == "block") {
+                submenu.style.display = "none";
+            } else {
+                submenu.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <a class="sidebar_a" href="pages/page1.html" target="content">
+            什么是根龋？
+        </a>
+        <a class="sidebar_a" href="pages/page2.html" target="content">
+            根龋病因及危险因素
+        </a>
+        <a class="sidebar_a" href="pages/page3.html" target="content">
+            根龋风险评估模型
+        </a>
+        <a class="sidebar_a" href="pages/page4.html" target="content">
+            根龋的分级诊断标准
+        </a>
+        <a class="sidebar_a" href="pages/page5.html" target="content">
+            根龋分级诊疗意见
+        </a>
+        <a class="sidebar_a" href="pages/page6.html" target="content">
+            口腔保健建议
+        </a>
+        <a class="sidebar_a" href="pages/page7.html" target="content">
+            失能老人的口腔清洁
+        </a>
+        <a class="sidebar_a" href="javascript:void(0);" onclick="toggleSubmenu()">正确的刷牙方法  </a>
+        <div id="submenu" class="submenu">
+            <a class="submenu_a" href="pages/page8_1.html" target="content">
+                刷牙
+            </a>
+            <a class="submenu_a" href="pages/page8_2.html" target="content">
+                推荐使用辅助清洁工具
+            </a>
+        </div>
+    </div>
+</body>
+</html>
