@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>口腔健康自我评估表单</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            width: 80%;
+        }
+        .container {
+            width: 50%;
+            height: 80%;
+            float: left;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], select {
+            font-size: 20px;
+            width: 93%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="number"] {
+            width: 90%;
+        }
+        input[type="button"] {
+            font-size: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        #pg {
+            font-size: 40px;
+        }
+        .tc {
+            width: 40%;
+            height: 80%;
+            margin: 150px 46px;
+            float: left;
+        }
+        .label {
+            font-size: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        function calculate() {
+            var age = document.getElementById("age").value;
+            var untreatedCaries = document.getElementById("untreatedCaries").value;
+            var treatedCaries = document.getElementById("treatedCaries").value;
+            var num = document.getElementById("num").value;
+            var denture = document.getElementById("denture").value;
+            if (denture == '是') denture = 1;
+            else denture = 0;
+            var res = -3.630 + 0.056 * age + 0.405 * untreatedCaries
+                + 0.407 * treatedCaries - 0.064 * num - 0.877 * denture;
+            res = res.toFixed(4);
+            console.log(res);
+            var label1 = document.getElementById("label1");
+            label1.innerHTML = "您的总分为：" + res;
+            var label2 = document.getElementById("label2");
+            if (res >= 0.8) label2.innerHTML = "您的患病风险：" + "高风险";
+            else if (res > 0.4) label2.innerHTML = "您的患病风险：" + "中风险";
+            else label2.innerHTML = "您的患病风险：" + "低风险";
+            var res_div = document.getElementById("res_div");
+            if (res_div.style.display == 'none')
+                res_div.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <h2 id="pg">口腔健康自我评估</h2>
+            <div class="form-group">
+                <label for="age">年龄：(50~100，示例：67)</label>
+                <input type="number" id="age" name="age" placeholder="请输入您的年龄" required>
+            </div>
+            <div class="form-group">
+                <label for="untreatedCaries">冠龋：(0~24，示例：3)</label>
+                <input type="number" id="untreatedCaries" name="untreatedCaries" placeholder="请输入您未做治疗的龋齿的数量" required>
+            </div>
+            <div class="form-group">
+                <label for="treatedCaries">已充填有龋：(0~10，示例：1)</label>
+                <input type="number" id="treatedCaries" name="treatedCaries" placeholder="请输入您已做治疗，但再次患龋的牙齿的数量" required>
+            </div>
+            <div class="form-group">
+                <label for="num">牙根未暴露的数量：(0~10，示例：1)</label>
+                <input type="number" id="num" name="num" placeholder="请输入您牙根未暴露的数量" required>
+            </div>
+            <div class="form-group">
+                <label for="denture">可摘活动义齿(您是否佩戴可摘活动义齿)</label>
+                <select id="denture" name="denture">
+                    <option value="yes">是</option>
+                    <option value="no">否</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>主观指标：您对自己牙齿和口腔状况评价如何？</label>
+                <select name="oralHealthRating">
+                    <option value="excellent">很好</option>
+                    <option value="good">较好</option>
+                    <option value="average">一般</option>
+                    <option value="poor">较差</option>
+                    <option value="veryPoor">很差</option>
+                </select>
+            </div>
+            <input type="button" value="提交" onclick="calculate()" />
+        </div>
+        <div class="tc" id="res_div" style="display:none;">
+            <h2 id="pg">评估结果:</h2>
+            <label class="label" id="label1"></label>
+            <label class="label" id="label2"></label>
+            <label class="label" style="color: #999">根龋患病风险： <0.4为低风险，0.4-0.8为中风险，≥0.8为高风险</label>
+        </div>
+    </div>
+</body>
+</html>

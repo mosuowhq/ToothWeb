@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>刷牙</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+            .image-row img {
+                width: calc(30% - 10px);
+                margin: 5px;
+                height: auto;
+                border-radius: 5px;
+            }
+
+                .image-row img:hover {
+                    transform: scale(1.03);
+                    transition: transform 0.3s ease-in-out;
+                }
+
+        video {
+            display: block;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            font-size: 25px;
+            text-indent: 2em;
+            animation: fadeIn 2s;
+            color: #1d3124;
+        }
+
+        p {
+            font-size: 25px;
+            text-indent: 2em;
+            color: #1d3124;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="fade-in">
+            每天早晚饭后都应及时刷牙，每次不少于2分钟，推荐使用水平颤动拂刷法。首先，将刷毛放置在牙齿和牙龈的交界处，指向牙根方向并与牙长轴呈45°角，
+            轻轻加压使刷毛部分进入龈沟内。刷毛在原位短距离水平颤动4～5次再上下拂刷，每次刷2～3个牙，再移到下一组牙，注意重叠放置。刷牙要面面俱到，
+            上下颌最后一颗牙的远中面和邻近无牙区的牙面容易被忽视，需要清洁到位。刷牙完成后还应轻刷舌苔。刷牙后，要用清水冲洗牙刷，甩干水分，放在通风处彻底干燥。
+        </p>
+        <div class="image-row">
+            <img src="../images/8_1_1.png" alt="图片1">
+            <img src="../images/8_1_2.png" alt="图片2">
+            <img src="../images/8_1_3.png" alt="图片3">
+        </div>
+        <div class="image-row">
+            <img src="../images/8_1_4.png" alt="图片4">
+            <img src="../images/8_1_5.png" alt="图片5">
+            <img src="../images/8_1_6.png" alt="图片6">
+        </div>
+
+        <p>对于牙刷的选择，可以从以下方面来衡量：①刷头大小合适，一般以覆盖2颗牙齿为宜；②刷毛软硬适中，不易造成损伤又能起到良好的清洁作用；③刷柄要便于握持，不易滑脱。</p>
+
+        <p>对于帕金森病、脑卒中等神经系统性疾病患者或手部动作不够灵活者，推荐使用电动牙刷。相比普通牙刷，其手法更简便，按照一定的顺序将刷头轻轻放置在所有牙面即可。</p>
+
+        <p>在牙膏的选择方面，一般推荐使用含氟牙膏来预防龋病，刷牙后吐出泡沫即可，可不漱口。</p>
+        <video controls>
+            <source src="../videos/巴氏刷牙法.mp4" type="video/mp4">
+            您的浏览器不支持视频标签。
+        </video>
+    </div>
+</body>
+</html>

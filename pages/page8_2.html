@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>带选项卡的静态JSP网页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .box {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 80%;
+            /*background-color: rgb(0, 255, 255,0.5);*/
+        }
+        .tab {
+            overflow: hidden;
+            background-color: #e59560;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+        }
+
+            .tab button {
+                font-size: 25px;
+                background-color: #e59560;
+                color: #1d3124;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+            }
+
+                .tab button:hover {
+                    background-color: #ddd;
+                }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #e59560;
+            border-top: none;
+        }
+
+        .centered {
+            color: #1d3124;
+            text-align: left;
+            font-size: 20px;
+            text-indent: 2em;
+        }
+
+        .image-gallery img {
+            width: 300px;
+            height: auto;
+            margin: 10px;
+        }
+
+        .fade-in {
+            font-size: 25px;
+            text-indent: 2em;
+            animation: fadeIn 2s;
+            color: #1d3124;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            color: #1d3124;
+            text-align: left;
+        }
+
+        video {
+            display: block;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+
+        .开头 {
+            margin: 0 auto;
+            /*margin-top:5px;*/
+            /*background-color: #fff;*/
+        }
+    </style>
+    <script>
+	function openTab(evt, tabName,t) {
+  		var i, tabcontent, tablinks;
+  		tabcontent = document.getElementsByClassName("tabcontent");
+  		for (i = 0; i < tabcontent.length; i++) {
+    		tabcontent[i].style.display = "none";
+  		}
+  		tablinks = document.getElementsByClassName("tablinks");
+  		for (i = 0; i < tablinks.length; i++) {
+  			if(document.getElementById(t) == tablinks[i]){
+  				tablinks[i].style.backgroundColor = "#eee";
+  			}
+  			else{
+  				tablinks[i].style.backgroundColor = "#e59560";
+  			}
+  		}
+  		document.getElementById(tabName).style.display = "block";
+	}
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="开头">
+            <p class="centered">
+                通常刷牙只能清洁到牙齿外面、里面及咬合面三个面，相邻牙齿之间的牙缝是清理不到的，牙缝里的细菌如鱼得水，
+                利用未清除的食物残渣代谢生长，破坏牙体组织，从而引起食物嵌塞，冷热敏感甚至牙齿疼痛。
+                主要有以下三种方式用于清理牙缝：
+            </p>
+        </div>
+
+        <div class="选项卡">
+            <div class="tab">
+                <button id="tablinks1" class="tablinks" onclick="openTab(event, 'Option1','tablinks1')">冲牙器</button>
+                <button id="tablinks2" class="tablinks" onclick="openTab(event, 'Option2','tablinks2')">牙线</button>
+                <button id="tablinks3" class="tablinks" onclick="openTab(event, 'Option3','tablinks3')">牙缝刷</button>
+            </div>
+
+            <div id="Option1" class="tabcontent">
+                <h3 class="centered">冲牙器：又叫做水牙线，利用加压后的水流清理隐藏在牙缝里的食物残渣等，适用于各群体，尤其是手部活动不太灵活的老年群体，能有效改善口腔卫生状况。</h3>
+                <p>冲牙器的使用方法</p>
+                <div class="image-gallery centered fade-in">
+                    <img src="../images/8_2.png" alt="图片1">
+                </div>
+                <p>选择合适的冲洗模式，将喷嘴垂直放置于牙面或牙齿之间，切勿高压直射牙龈</p>
+            </div>
+
+            <div id="Option2" class="tabcontent">
+                <p>牙线：利用牙线在牙间隙牙齿表面的刮擦去除邻面的菌斑。对于老年群体来说，牙线棒使用起来更加简便。</p>
+                <h3 class="centered">牙线的使用方法</h3>
+                <div class="image-gallery centered fade-in">
+                    <img src="../images/8_3_1.png" alt="图片2">
+                    <img src="../images/8_3_2.png" alt="图片3">
+                </div>
+                <p>剪下一段约20-25cm长的牙线，将两端分别卷在两手的中指上，两手指间留下约10cm长的牙线; 用双手的食指或拇指绷紧其中一段牙线，约1-2cm</p>
+
+                <div class="image-gallery centered fade-in">
+                    <img src="../images/8_3_3.png" alt="图片4">
+                    <img src="../images/8_3_4.png" alt="图片5">
+                </div>
+                <p>将牙线小心沿着牙面，以拉锯方式，缓缓通过两牙的接触点，进入牙缝; 使牙线尽量贴紧牙面，呈C字形包绕牙齿，上下刮擦3-5次</p>
+
+                <h3 class="centered">牙线棒的使用方法</h3>
+                <div class="image-gallery centered fade-in">
+                    <img src="../images/8_3_5.png" alt="图片6">
+                    <img src="../images/8_3_6.png" alt="图片6">
+                </div>
+                <p>握住牙线棒的手柄，以拉锯式进入牙缝; 使牙线尽量贴紧牙面，呈C字形包绕牙齿，上下刮擦3-5次</p>
+
+                <video controls class="centered fade-in">
+                    <source src="../videos/牙线的使用方法.mp4" type="video/mp4">
+                    您的浏览器不支持视频标签。
+                </video>
+            </div>
+
+            <div id="Option3" class="tabcontent">
+                <p>牙缝刷：又叫间隙刷，有从大到小的不同型号，适用于牙缝较大的老年群体，较快清洁牙缝里的食物残渣。</p>
+                <h3 class="centered">牙缝刷（图）的使用方法</h3>
+                <div class="image-gallery centered fade-in">
+                    <img src="../images/8_4_1.png" alt="图片7">
+                    <img src="../images/8_4_2.png" alt="图片8">
+                </div>
+                <p>根据间隙大小，选择合适型号的牙缝刷</p>
+
+                <div class="image-gallery centered fade-in">
+                    <img src="../images/8_4_3.png" alt="图片9">
+                    <img src="../images/8_4_4.png" alt="图片10">
+                </div>
+                <p>沿着牙龈倾斜地贴住牙齿根部与牙龈边缘; 上颌刷头向下，下颌刷头向上，轻轻转动刷头插入牙缝间，拉锯式前后移动3-4次</p>
+
+                <video controls class="centered fade-in">
+                    <source src="../videos/牙间隙刷的使用方法.mp4" type="video/mp4">
+                    您的浏览器不支持视频标签。
+                </video>
+            </div>
+        </div>
+
+        <div class="结束语">
+            <p class="centered fade-in">上述这些工具搭配使用，能够更好地清洁牙齿，维护口腔健康。</p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script>
+document.getElementsByClassName('tablinks')[0].click();
+    </script>
+
+</body>
+</html>
